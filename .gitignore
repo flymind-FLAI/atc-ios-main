@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+
+# Xcode
+build/
+DerivedData/
+*.xcuserdata
+xcuserdata/
+*.xcworkspace/xcuserdata/
+.build/
+
+# Whisper model binaries + Core ML encoders — too large for GitHub
+# (single files >100MB). Regenerate with ./build_ios_model.sh.
+*.bin
+*.mlmodelc/
+# …except the 5.7MB speaker encoder (regenerate: convert_speaker_encoder.py)
+!whisper.swiftui.demo/Resources/models/speaker-id-v1.mlmodelc/
+
+# Upstream whisper.cpp clone (regenerable: git clone + build-xcframework.sh)
+/whisper.cpp/
+
+# NOTE: /whisper.xcframework/ IS tracked — all files <100MB, lets a fresh
+# clone build the app without recompiling whisper.cpp.
+
+# Local tool config
+.claude/
